@@ -3,11 +3,11 @@ class BlockbusterMovie extends Movie {
       super(title, genres, releaseDate, popularity, revenue);
       this.label = "Blockbuster";
     }
-  
+
     display(x, y) {
       fill(255, 235, 205, 220);  // Light golden background
       stroke(255, 215, 0);  // Gold border for blockbusters
-      rect(x - 10, y - 30, 320, 120, 10); // Increased width and height
+      rect(x - 10, y - 30, 320, 120, 10); // Box dimensions
 
       fill(255, 69, 0);
       textSize(14);
@@ -17,11 +17,11 @@ class BlockbusterMovie extends Movie {
       fill(0);
       textSize(12);
       textStyle(BOLD);
-      text(`Title: ${this.title}`, x, y);
+      this.drawWrappedText(`Title: ${this.title}`, x, y, 300);
       textStyle(NORMAL);
-      text(`Genres: ${this.genres}`, x, y + 20);
+      this.drawWrappedText(`Genres: ${this.genres}`, x, y + 20, 300);
       text(`Release Date: ${this.releaseDate}`, x, y + 40);
       text(`Popularity: ${this.popularity}`, x, y + 60);
       text(`Revenue: $${this.revenue}`, x, y + 80);
     }
-  }
+}
